@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets';
+import CoverImg from '../assets/images/cover.svg';
+---
+
+<main class="w-full h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex flex-col gap-6 justify-center md:items-start items-center text-center md:text-left">
+            <h1 class="text-5xl font-semibold font-inter">Digital Solutions for a Stronger Online Presence</h1>
+            <h2 class="text-2xl font-inter">Smart strategies, optimized websites, and marketing that drive growth.</h2>
+            <a class="px-8 py-2 bg-blue-500 font-inter text-lg text-white rounded-md" href="#">Get Started</a>
+        </div>
+        <div class="flex justify-center items-center">
+            <Image src={CoverImg} alt="Cover Image" width="600" height="400"/>
+        </div>
+    </div>
+</main>

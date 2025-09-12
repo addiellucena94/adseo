@@ -4,7 +4,7 @@ import MenuIcon from '../assets/images/menu-icon-3.svg';
 import ArrowRightIcon from '../assets/images/arrow-rigth-icon.svg';
 ---
 
-<header class="w-full max-w-7xl mx-auto h-16 fixed top-0 bg-white flex items-center justify-between px-4">
+<header class="w-full h-16 fixed top-0 bg-white flex items-center justify-between px-4">
     <div class="w-full max-w-7xl mx-auto flex items-center justify-between">
         <h1 class="font-semibold font-inter text-2xl">AD SEO</h1>
         <button id="menu" class="md:hidden">
@@ -54,11 +54,11 @@ import ArrowRightIcon from '../assets/images/arrow-rigth-icon.svg';
     // Asegura que el nav esté visible y sin animación al redimensionar a md o más grande
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
-            nav.classList.remove('hidden', 'opacity-0', 'translate-y-4');
-            nav.classList.add('opacity-100', 'translate-y-0');
+            nav.classList.remove('hidden', 'opacity-0');
+            nav.classList.add('opacity-100');
         } else {
-            nav.classList.add('hidden', 'opacity-0', 'translate-y-4');
-            nav.classList.remove('opacity-100', 'translate-y-0');
+            nav.classList.add('hidden', 'opacity-0');
+            nav.classList.remove('opacity-100');
         }
     });
 </script>
