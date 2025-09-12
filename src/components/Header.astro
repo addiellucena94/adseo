@@ -5,42 +5,60 @@ import ArrowRightIcon from '../assets/images/arrow-rigth-icon.svg';
 ---
 
 <header class="w-full max-w-7xl mx-auto h-16 fixed top-0 bg-white flex items-center justify-between px-4">
-    <h1 class="font-semibold font-inter text-2xl">AD SEO</h1>
-    <button id="menu" class="md:hidden">
-        <Image src={MenuIcon} alt="Menu Icon" width="40" height="40"/>
-    </button>
-    <nav class="hidden fixed top-16 right-0 bg-white w-full md:static md:w-auto md:top-0 flex flex-col md:flex-row md:items-center items-start gap-8 p-4 md:p-0 shadow-md md:shadow-none text-lg transition-all duration-300 ease-in-out opacity-0 translate-y-4 md:opacity-100 md:translate-y-0" id="main-nav">
-        <a class="w-full md:w-fit flex justify-between align-center" href="#">
-            <p class="uppercase md:capitalize">Home</p>
-            <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
-        </a>
-        <a class="w-full md:w-fit flex justify-between align-center" href="#">
-            <p class="uppercase md:capitalize">Services</p>
-            <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
-        </a>
-        <a class="w-full md:w-fit flex justify-between align-center" href="#">
-            <p class="uppercase md:capitalize">Why Us</p>
-            <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
-        </a>
-        <a class="w-full md:w-fit flex justify-between align-center" href="#">
-            <p class="uppercase md:capitalize">FAQs</p>
-            <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
-        </a>
-        <a class="w-full md:w-fit flex justify-between align-center" href="#">
-            <p class="uppercase md:capitalize">Contact</p>
-            <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
-        </a>
-    </nav>
+    <div class="w-full max-w-7xl mx-auto flex items-center justify-between">
+        <h1 class="font-semibold font-inter text-2xl">AD SEO</h1>
+        <button id="menu" class="md:hidden">
+            <Image src={MenuIcon} alt="Menu Icon" width="40" height="40"/>
+        </button>
+        <nav class="hidden fixed top-16 right-0 bg-white w-full md:static md:w-auto md:top-0 flex flex-col md:flex-row md:items-center items-start gap-8 p-4 md:p-0 shadow-md md:shadow-none text-lg transition-all duration-300 ease-in-out opacity-0 translate-y-4 md:opacity-100 md:translate-y-0" id="main-nav">
+            <a class="w-full md:w-fit flex justify-between align-center" href="#">
+                <p class="uppercase md:capitalize">Home</p>
+                <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
+            </a>
+            <a class="w-full md:w-fit flex justify-between align-center" href="#">
+                <p class="uppercase md:capitalize">Services</p>
+                <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
+            </a>
+            <a class="w-full md:w-fit flex justify-between align-center" href="#">
+                <p class="uppercase md:capitalize">Why Us</p>
+                <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
+            </a>
+            <a class="w-full md:w-fit flex justify-between align-center" href="#">
+                <p class="uppercase md:capitalize">FAQs</p>
+                <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
+            </a>
+            <a class="w-full md:w-fit flex justify-between align-center" href="#">
+                <p class="uppercase md:capitalize">Contact</p>
+                <Image class="md:hidden" src={ArrowRightIcon} alt="Arrow Right Icon" width="24" height="24"/>
+            </a>
+        </nav>
+    </div>
 </header>
 <script is:inline>
     const menuBtn = document.getElementById('menu');
     const nav = document.getElementById('main-nav');
 
-    menuBtn?.addEventListener('click', () => {
-        nav.classList.toggle('hidden');
-        nav.classList.toggle('opacity-0');
-        nav.classList.toggle('translate-y-4');
-        nav.classList.toggle('opacity-100');
-        nav.classList.toggle('translate-y-0');
+    function toggleNav() {
+        // Solo ejecutar en pantallas menores a md (md = 768px)
+        if (window.innerWidth < 768) {
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('opacity-0');
+            nav.classList.toggle('translate-y-4');
+            nav.classList.toggle('opacity-100');
+            nav.classList.toggle('translate-y-0');
+        }
+    }
+
+    menuBtn?.addEventListener('click', toggleNav);
+
+    // Asegura que el nav esté visible y sin animación al redimensionar a md o más grande
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            nav.classList.remove('hidden', 'opacity-0', 'translate-y-4');
+            nav.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            nav.classList.add('hidden', 'opacity-0', 'translate-y-4');
+            nav.classList.remove('opacity-100', 'translate-y-0');
+        }
     });
 </script>
