@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import FacebookIcon from '../assets/images/facebook-icon.svg';
+import InstagramIcon from '../assets/images/instagram-icon.svg';
+---
+
+<footer class="w-full bg-blue-600 font-inter">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col justify-between items-center gap-4">
+        <div class="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 py-4">
+            <div class="w-full md:w-1/2">
+                <h1 class="text-3xl font-bold text-gray-50">AD SEO</h1>
+                <p  class="text-lg text-gray-50 my-4">
+                    Enter your email to stay up to date with the latest updates from Us.
+                </p>
+                <form class="w-full md:max-w-96 flex flex-col  gap-4">
+                    <input class="w-full border-solid border-1 border-gray-400 h-12 rounded-md px-2 text-lg text-gray-900 bg-gray-50" type="email" name="email" id="email" placeholder="user@domain.com" autocomplete="off" required>
+                    <button class="bg-blue-700 h-12 rounded-md text-gray-50 font-medium text-lg hover:text-blue-800 cursor-pointer">Suscribe to our newsletter</button>
+                </form>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col md:flex-row justify-end items-start md:items-start gap-8 md:gap-20">
+                <div class="text-gray-200 font-inter text-lg flex flex-col gap-2">
+                    <h3 class="font-bold text-2xl text-gray-50">Resourses</h3>
+                    <a href="">Blog</a>
+                    <a href="">Carrier</a>
+                    <a href="">Case studies</a>
+                </div>
+                <div class="text-gray-200 font-inter text-lg flex flex-col gap-2">
+                    <h3 class="font-bold text-2xl text-gray-50">Legal</h3>
+                    <a href="">Terms of service</a>
+                    <a href="">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="w-full border-t-1 border-t-solid border-t-blue-800 py-4 flex flex-col md:flex-row-reverse justify-between items-center gap-4">
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end gap-4">
+                <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <Image src={FacebookIcon} alt="Facebook" width={24} height={24} />
+                </a>
+                <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <Image src={InstagramIcon} alt="Instagram" width={24} height={24} />
+                </a>
+            </div>
+            <div>
+                <p class="text-lg text-gray-50 font-inter">
+                    AD SEO &copy; {new Date().getFullYear()} All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
