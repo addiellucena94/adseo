@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import serviceImage from "../assets/images/services-cover.svg";
+---
+
+<section class="w-full bg-gray-50 text-center">
+    <div class="max-w-7xl mx-auto py-16 px-4 flex flex-col justify-center gap-2">
+        <h2 class="text-2xl font-bold text-gray-900">Our Services</h2>
+        <p class="text-lg max-w-2xl mx-auto font-light text-gray-700">
+            Solutions designed to enhance your online presence and drive real growth.
+        </p>
+        <div>
+            <h3></h3>
+            <Image src={serviceImage} alt="Services Cover" class="mx-auto mt-8" />
+        </div>
+    </div>
+</section>
